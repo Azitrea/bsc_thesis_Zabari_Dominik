@@ -1,0 +1,7 @@
+{
+  "name": "ionic-poll",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
