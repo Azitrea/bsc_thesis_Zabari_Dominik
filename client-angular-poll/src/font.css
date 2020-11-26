@@ -1,0 +1,114 @@
+@font-face {
+  font-family: "Poppins-BoldItalic";
+  src: url("assets/font/Poppins-BoldItalic.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Poppins-Black";
+  src: url("assets/font/Poppins-Black.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url("assets/font/Poppins-Bold.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Poppins-BlackItalic";
+  src: url("assets/font/Poppins-BlackItalic.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Poppins-ExtraBold";
+  src: url("assets/font/Poppins-ExtraBold.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Poppins-ExtraBoldItalic";
+  src: url("assets/font/Poppins-ExtraBoldItalic.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Poppins-ExtraLight";
+  src: url("assets/font/Poppins-ExtraLight.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Poppins-ExtraLightItalic";
+  src: url("assets/font/Poppins-ExtraLightItalic.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Poppins-Italic";
+  src: url("assets/font/Poppins-Italic.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Poppins-Light";
+  src: url("assets/font/Poppins-Light.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Poppins-LightItalic";
+  src: url("assets/font/Poppins-LightItalic.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Poppins-Medium";
+  src: url("assets/font/Poppins-Medium.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Poppins-MediumItalic";
+  src: url("assets/font/Poppins-MediumItalic.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("assets/font/Poppins-Regular.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: url("assets/font/Poppins-SemiBold.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Poppins-SemiBoldItalic";
+  src: url("assets/font/Poppins-SemiBoldItalic.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Poppins-Thin";
+  src: url("assets/font/Poppins-Thin.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Poppins-ThinItalic";
+  src: url("assets/font/Poppins-ThinItalic.ttf") format("opentype");
+}
+
+
+@font-face {
+  font-family: "Westeinde";
+  src: url("assets/font/Westeinde Caption-Thin.otf") format("opentype");
+}
+@font-face {
+  font-family: "WesteindeItalic";
+  src: url("assets/font/Westeinde Caption-Thin Italic.otf") format("opentype");
+}
+@font-face {
+  font-family: "WesteindeRegular";
+  src: url("assets/font/Westeinde Caption-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "WesteindeRegularItalic";
+  src: url("assets/font/Westeinde Caption-Regular Italic.otf") format("opentype");
+}
+@font-face {
+  font-family: "WesteindeLight";
+  src: url("assets/font/Westeinde Caption-Light.otf") format("opentype");
+}
+@font-face {
+  font-family: "WesteindeLightItalic";
+  src: url("assets/font/Westeinde Caption-Light Italic.otf") format("opentype");
+}
+@font-face {
+  font-family: "WesteindeHeay";
+  src: url("assets/font/Westeinde Caption-Heavy.otf") format("opentype");
+}
+@font-face {
+  font-family: "WesteindeHeavyItalic";
+  src: url("assets/font/Westeinde Caption-Heavy Italic.otf") format("opentype");
+}
+@font-face {
+  font-family: "WesteindeBold";
+  src: url("assets/font/Westeinde Caption-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "WesteindeBoldItalic";
+  src: url("assets/font/Westeinde Caption-Bold Italic.otf") format("opentype");
+}
