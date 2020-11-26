@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
+    <ion-title>Űrlapok</ion-title>
+    <ion-button (click)="save()" slot="end">Mentés</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form *ngIf="form" [formGroup]="form">
+    <ion-list>
+      <ion-card class="question-container position-relative" *ngFor="let field of fields; let i = index;">
+        <ng-container appDynamicForm [field]="field" [group]="form" [index]="i"></ng-container>
+      </ion-card>
+    </ion-list>
+  </form>
+</ion-content>

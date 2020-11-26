@@ -1,0 +1,17 @@
+<app-display-text-header [index]="index" [field]="field" [group]="group"></app-display-text-header>
+
+<ion-grid class="photo-grid">
+  <ion-row>
+    <ion-col size="6" *ngFor="let photo of formArray.value; let position = index">
+      <ion-img [src]="photo.webviewPath" (click)="showActionSheet(photo, position)"></ion-img>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-fab vertical="bottom" horizontal="center">
+  <ion-fab-button (click)="takeNewPhoto()">
+    <ion-icon name="camera"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+<app-validation-display [field]="field" [group]="group"></app-validation-display>

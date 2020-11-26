@@ -1,0 +1,9 @@
+<app-display-text-header [index]="index" [field]="field" [group]="group"></app-display-text-header>
+
+<ion-item class="ion-no-padding">
+  <form [formGroup]="group">
+    <ion-checkbox [formControlName]="field.name"></ion-checkbox>
+  </form>
+</ion-item>
+
+<app-validation-display [field]="field" [group]="group"></app-validation-display>

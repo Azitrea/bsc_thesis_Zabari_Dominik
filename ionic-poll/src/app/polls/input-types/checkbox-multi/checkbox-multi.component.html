@@ -1,0 +1,12 @@
+<app-display-text-header [index]="index" [field]="field" [group]="group"></app-display-text-header>
+
+  <form [formGroup]="group">
+    <div class="d-flex" *ngFor="let option of field.options; let i = index" [formArrayName]="field.name">
+      <ion-item class="d-flex" [formGroup]="formArray.at(i)">
+        <ion-checkbox formControlName="checked"></ion-checkbox>
+        <ion-label class="display-text">{{ option.choiceString }}</ion-label>
+      </ion-item>
+    </div>
+  </form>
+
+  <app-validation-display [field]="field" [group]="group"></app-validation-display>

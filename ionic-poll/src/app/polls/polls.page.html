@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
+    <ion-title>Űrlapok</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="pollList$ | async as pollListData; else noPoll">
+    <ion-item *ngFor="let item of pollListData" (click)="selectForm(item.pollID)">
+      {{ item.pollName }}
+    </ion-item>
+  </div>
+
+  <ng-template #noPoll>
+    <div>Nincs kitöltendő kérdőív</div>
+  </ng-template>
+
+</ion-content>

@@ -1,0 +1,13 @@
+
+<app-display-text-header [index]="index" [field]="field" [group]="group"></app-display-text-header>
+
+<ion-list [formGroup]="group">
+  <ion-radio-group [formControlName]="field.name">
+    <ion-item *ngFor="let option of field.options">
+      <ion-label>{{ option.choiceString }}</ion-label>
+      <ion-radio slot="start" [value]="option"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+</ion-list>
+
+<app-validation-display [field]="field" [group]="group"></app-validation-display>

@@ -1,0 +1,5 @@
+<div [ngClass]="{'error-msg': group.get(field.name).touched && group.get(field.name).invalid}">
+  <div>{{ index + 1 }}.</div>
+  <div>{{ field.displayText }}</div>
+</div>
+

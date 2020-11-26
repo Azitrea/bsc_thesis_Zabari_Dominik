@@ -1,0 +1,11 @@
+<app-display-text-header [index]="index" [field]="field" [group]="group"></app-display-text-header>
+
+<ion-item [formGroup]="group" class="ion-no-padding">
+  <ion-select [formControlName]="field.name">
+    <ion-select-option *ngFor="let option of field.options" [value]="option">
+      {{ option.choiceString }}
+    </ion-select-option>
+  </ion-select>
+</ion-item>
+
+<app-validation-display [field]="field" [group]="group"></app-validation-display>
