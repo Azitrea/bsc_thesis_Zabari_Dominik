@@ -1,0 +1,18 @@
+<div class="option-view">
+  <div>
+    <button type="button" class="btn btn-primary" *ngIf="!toEdit" (click)="addNewControl()" [disabled]="optionTrueLength >= 10">Választási lehetőség
+      hozzáadása</button>
+    <div *ngIf="optionTrueLength >= 10">Maximum 10db opció</div>
+    <hold-new-control-options *ngIf="toEdit" [option]="toEdit" [index]="index" (result)="addEditControl($event)">
+    </hold-new-control-options>
+  </div>
+
+  <div>
+    <div *ngFor="let item of options; let i = index;">
+      <div *ngIf="item.active" class="choice-item" (click)="select(item, i)">
+        <div class="pointer choice-string">{{item.choiceString}}</div>
+        <div class="pointer" (click)="removeOption(i)">X</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<hold-display-text [field]="field" [group]="group" [index]="index"></hold-display-text>
+
+<div>
+  <div class="image-container" *ngIf="formArray.value.length > 0; else noImg">
+    <div class="border-b" *ngFor="let img of formArray.value">
+      <img class="image-style" *ngIf="img" [src]="img | secureImage | async">
+    </div>
+  </div>
+</div>
+
+<ng-template #noImg>
+  <div>Kép feltöltés</div>
+</ng-template> 
+
+<hold-display-validations [group]="group" [field]="field"></hold-display-validations>

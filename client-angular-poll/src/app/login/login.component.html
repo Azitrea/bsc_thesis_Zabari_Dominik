@@ -1,0 +1,16 @@
+<div class="full-page">
+  <div class="inner-container">
+    <div class="login-text pb-4">Belépés</div>
+    <form [formGroup]="form">
+      <div class="pb-2">
+        <input class="form-control" formControlName="loginName" placeholder="Felhasználónév">
+      </div>
+      <div>
+        <input type="password" class="form-control" formControlName="password" placeholder="Jelszó">
+      </div>
+    </form>
+    <div class="pt-3 d-flex">
+      <button class="btn btn-primary" (click)="login()">Belépés</button>
+    </div>
+  </div>
+</div>

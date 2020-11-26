@@ -1,0 +1,26 @@
+.form-input {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.header-text {
+  font-family: 'Poppins-SemiBold';
+  font-size: 14px;
+}
+
+.form-input input, .form-input hold-date-input {
+  width: 100%;
+}
+
+.form-input div {
+  font-family: 'Poppins-Regular';
+
+  display: flex;
+  align-self: center;
+}
+
+.border-none {
+  border: none !important;
+}

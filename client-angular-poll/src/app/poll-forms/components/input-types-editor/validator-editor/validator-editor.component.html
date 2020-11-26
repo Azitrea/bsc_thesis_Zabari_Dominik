@@ -1,0 +1,19 @@
+<div class="option-view">
+  <div>
+    <button *ngIf="!editMode" class="btn btn-primary" (click)="createNew()">Új Validáció</button>
+    <div *ngIf="editMode">
+      <hold-new-validation [validationTypeList]="validationTypeList" [validatorToEdit]="validatorToEdit" [index]="index"
+        (result)="handleResult($event)"></hold-new-validation>
+    </div>
+    <small class="error-color" *ngIf="errorMsg">{{ errorMsg }}</small>
+  </div>
+
+  <div>
+    <div class="validation-container" *ngFor="let validation of validations; let i = index">
+      <div *ngIf="validation.active" class="validation-chip pointer" (click)="editValidator(validation, i)">
+        <div>{{ validation.description }}</div>
+        <div class="pl-2" (click)="deleteValidator(validation, i)">X</div>
+      </div>
+    </div>
+  </div>
+</div>

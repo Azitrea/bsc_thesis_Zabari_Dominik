@@ -1,0 +1,82 @@
+<div>
+  <div class="modal-header header-text">{{editMode ? 'Kérdőív módosítása' : 'Új kérdőív létrehozása'}}</div>
+  <div class="modal-body">
+    <form [formGroup]="newFormForm">
+      <div class="form-input">
+        <div>Kérdőív neve:</div>
+        <div>
+          <input class="form-control" type="text" formControlName="pollName">
+        </div>
+      </div>
+      <div class="form-input">
+        <div>Divízió:</div>
+        <div>
+          <select class="form-control" formControlName="depID">
+            <option *ngFor="let dep of departmentList" [ngValue]="dep.DepID">
+              {{ dep.DepName }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="form-input">
+        <div class="pr-3">
+          <select class="form-control" formControlName="projectSelector">
+            <option [ngValue]="true">Project</option>
+            <option [ngValue]="false">Etap</option>
+          </select>
+        </div>
+        <div *ngIf="newFormForm.value.projectSelector; else selectEtap">
+          <input class="form-control" type="text" formControlName="projectID">
+        </div>
+        <ng-template #selectEtap>
+          <input class="form-control" type="text" formControlName="etapID">
+        </ng-template>
+      </div>
+      <div class="form-input">
+        <div>Kitölthető:</div>
+        <div>
+          <!-- <hold-date-input formControlName="availableFrom" [maxDate]="newFormForm.value.availableTo"></hold-date-input> -->
+        </div>
+      </div>
+      <div class="form-input">
+        <div>Eddig lehet:</div>
+        <div>
+          <!-- <hold-date-input formControlName="availableTo" [minDate]="newFormForm.value.availableFrom"></hold-date-input> -->
+        </div>
+      </div>
+      <div class="form-input">
+        <div>Kérdőív típusa:</div>
+        <div>
+          <select class="form-control" formControlName="pollTypeID">
+            <option *ngFor="let type of pollFormTypeList" [ngValue]="type.pollTypeID">
+              {{ type.pollTypeDescription }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="form-input">
+        <div>Kötelező:</div>
+        <div class="form-control border-none">
+          <mat-checkbox formControlName="optional"></mat-checkbox>
+        </div>
+      </div>
+      <!-- <div class="form-input"> Not implemented in db
+        <div>Állapot:</div>
+        <div>
+          <input class="form-control" type="text" formControlName="pollStatus">
+        </div>
+      </div> -->
+    </form>
+  </div>
+  <pre>
+    {{newFormForm.value | json}}
+  </pre>
+  <div class="d-flex w-100 justify-content-around modal-footer">
+    <div>
+      <button class="btn btn-cancel" (click)="onCancel()">Mégse</button>
+    </div>
+    <div>
+      <button class="btn btn-save" (click)="onSubmit()">Mentés</button>
+    </div>
+  </div>
+</div>

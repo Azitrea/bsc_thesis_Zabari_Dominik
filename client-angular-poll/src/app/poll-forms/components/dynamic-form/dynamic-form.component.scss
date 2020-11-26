@@ -1,0 +1,28 @@
+.question-container {
+  border: 2px solid white;
+  padding: 15px;
+  margin: 10px;
+  background-color: white;
+  box-shadow: -5px 4px 6px rgba(0, 0, 0, 0.25);
+  
+  border-radius: 15px;
+
+  width: 500px;
+}
+
+.edit-button {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  cursor: pointer;
+
+  display: none;
+}
+
+.question-container:hover .edit-button {
+  display: unset;
+}
+
+.selected {
+  border: 2px solid lightblue;
+}

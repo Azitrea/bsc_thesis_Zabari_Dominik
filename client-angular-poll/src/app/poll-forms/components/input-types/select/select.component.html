@@ -1,0 +1,21 @@
+<hold-display-text [field]="field" [group]="group" [index]="index"></hold-display-text>
+
+<form [formGroup]="group">
+  <select class="form-control" [formControlName]="field.name">
+    <option *ngFor="let option of field.options" [ngValue]="option">
+      {{ option.choiceString }}
+    </option>
+  </select>
+</form>
+
+<div class="header-style" *ngIf="field.options && field.options.length === 0; else option">
+  Nincs választási lehetőség megadva</div>
+
+<ng-template #option>
+  <div class="header-style">Választási lehetőségek:</div>
+  <ul class="list-unstyled">
+    <li class="list-item-style" *ngFor="let option of field.options">{{option.choiceString}}</li>
+  </ul>
+</ng-template>
+
+<hold-display-validations [group]="group" [field]="field"></hold-display-validations>

@@ -1,0 +1,12 @@
+<hold-display-text [field]="field" [group]="group" [index]="index"></hold-display-text>
+
+<form [formGroup]="group">
+  <mat-radio-group [formControlName]="field.name">
+    <div class="d-flex" *ngFor="let option of field.options">
+      <mat-radio-button [value]="option"></mat-radio-button>
+      <div class="option-text">{{ option.choiceString }}</div>
+    </div>
+  </mat-radio-group>
+</form>
+
+<hold-display-validations [group]="group" [field]="field"></hold-display-validations>

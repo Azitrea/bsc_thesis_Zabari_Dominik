@@ -1,0 +1,8 @@
+<div>{{index !== null ? 'Módosítás*' : 'Új létrehozás*'}}</div>
+<form [formGroup]="formGroup">
+  <input class="form-control" formControlName="choiceString" maxlength="50">
+</form>
+<div class="d-flex justify-content-around p-2">
+  <button class="btn btn-save" (click)="save()">{{index !== null ? 'Módosítás' : 'Hozzáadás'}}</button>
+  <button class="btn btn-secondary" (click)="clearForm()">Mégse</button>
+</div>

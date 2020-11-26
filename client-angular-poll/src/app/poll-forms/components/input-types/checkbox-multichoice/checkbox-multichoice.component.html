@@ -1,0 +1,12 @@
+<hold-display-text [field]="field" [group]="group" [index]="index"></hold-display-text>
+
+<div [formGroup]="group">
+  <div class="d-flex" *ngFor="let option of field.options; let i = index" [formArrayName]="field.name">
+    <div class="d-flex" [formGroup]="formArray.at(i)">
+      <mat-checkbox formControlName="checked"></mat-checkbox>
+      <div class="option-text">{{ option.choiceString }}</div>
+    </div>
+  </div>
+</div>
+
+<hold-display-validations [group]="group" [field]="field"></hold-display-validations>

@@ -1,0 +1,26 @@
+<div>{{index !== null ? 'Validáció módosítása' : 'Új validáció létrehozása'}}</div>
+<form [formGroup]="validatorFormGroup">
+  <div>
+    <div>Típus:*</div>
+    <select  class="form-control" formControlName="typeID">
+      <option *ngFor="let valType of localeChangeArray" [ngValue]="valType.valTypeID">{{ valType.valDescription }}</option>
+    </select>
+  </div>
+  <div>
+    <div>Hibaüzenet:*</div>
+    <div>
+      <input class="form-control" formControlName="message1" maxlength="50">
+    </div>
+  </div>
+  <div *ngIf="canHaveValueField">
+    <div>Érték:*</div>
+    <div>
+      <input class="form-control" formControlName="message2" maxlength="50">
+    </div>
+  </div>
+</form>
+<div class="d-flex justify-content-around p-2">
+  <button class="btn btn-primary" (click)="save()">{{ index !== null ? 'Módosítás' : 'Hozzáadás' }}</button>
+  <button class="btn btn-secondary" (click)="clearForm()">Mégse</button>
+</div>
+

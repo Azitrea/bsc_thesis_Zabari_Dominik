@@ -1,0 +1,10 @@
+<hold-display-text [field]="field" [group]="group" [index]="index"></hold-display-text>
+
+<form [formGroup]="group">
+  <div>
+    <textarea class="form-control" [formControlName]="field.name"
+    [placeholder]="'Hosszú szöveg'"></textarea>
+  </div>
+</form>
+
+<hold-display-validations [group]="group" [field]="field"></hold-display-validations>

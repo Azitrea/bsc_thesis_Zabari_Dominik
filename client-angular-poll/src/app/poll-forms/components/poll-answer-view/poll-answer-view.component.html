@@ -1,0 +1,11 @@
+<div class="view-container">
+  <form *ngIf="formGroup" class="dynamic-form" [formGroup]="formGroup">
+
+    <div class="question-container position-relative" *ngFor="let field of fieldConfig; let i = index;">
+      <ng-container holdDynamicField [field]="field" [group]="formGroup" [index]="i"></ng-container>
+    </div>
+
+  </form>
+
+  <pre>{{ answerList | json }}</pre>
+</div>

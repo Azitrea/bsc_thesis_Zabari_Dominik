@@ -1,0 +1,9 @@
+<hold-display-text [field]="field" [group]="group" [index]="index"></hold-display-text>
+
+<div [formGroup]="group">
+  <div>
+    <mat-checkbox [formControlName]="field.name"></mat-checkbox>
+  </div>
+</div>
+
+<hold-display-validations [group]="group" [field]="field"></hold-display-validations>
