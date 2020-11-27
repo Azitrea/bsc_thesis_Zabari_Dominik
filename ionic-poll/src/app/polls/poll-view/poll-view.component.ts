@@ -88,7 +88,7 @@ export class PollViewComponent implements OnInit {
 
       if (res.success) {
         this.pollFormGenerationService.setSelectedForm(null);
-        this.navCtrl.navigateBack('polls/view');
+        this.navCtrl.navigateRoot('polls');
       }
     });
   }
