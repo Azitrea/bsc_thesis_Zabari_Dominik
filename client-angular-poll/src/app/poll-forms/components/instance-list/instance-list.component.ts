@@ -4,6 +4,7 @@ import { IPollInstance } from '../../models/poll-item.model';
 import { FormUpdateService } from '../../services/form-update.service';
 import { Router } from '@angular/router';
 import { PollFormQueryService } from 'src/services/poll/poll-form-query.service';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'hold-instance-list',
@@ -11,7 +12,10 @@ import { PollFormQueryService } from 'src/services/poll/poll-form-query.service'
   styleUrls: ['./instance-list.component.scss']
 })
 export class InstanceListComponent implements OnInit {
-  list$: Observable<IPollInstance>;
+  list: IPollInstance[];
+
+  dataSource: MatTableDataSource<IPollInstance> = new MatTableDataSource();
+  displayedColumns: string[];
 
   constructor(
     private pollQueryService: PollFormQueryService,
@@ -19,19 +23,16 @@ export class InstanceListComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit() {
-    this.list$ = this.pollQueryService.getInstanceList(null, null);
+  async ngOnInit() {
+    this.list = await this.pollQueryService.getInstanceList(null, null).toPromise();
+    this.dataSource.data = this.list;
+    this.displayedColumns = ['pollName', 'loginName', 'createdAt'];
   }
 
-  handleResult(event) {
-    console.log(event);
-    switch (event.action) {
-      case 'FIELD_CLICK': {
-        console.log(event.value.pollID, event.value.pollInstanceID);
-        this.formUpdateService.setSelectedAnswer(event.value.pollID, event.value.pollInstanceID);
-        this.router.navigate(['poll/answer-view']);
-        break;
-      }
+  handleResult(row) {
+    if (row && row.pollID && row.pollInstanceID) {
+      this.formUpdateService.setSelectedAnswer(row.pollID, row.pollInstanceID);
+      this.router.navigate(['poll/answer-view']);
     }
   }
 }

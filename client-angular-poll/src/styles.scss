@@ -1,10 +1,167 @@
 /* You can add global styles to this file, and also import other style files */
-
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+@import "../node_modules/bootstrap/scss/bootstrap";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "~material-design-icons/iconfont/material-icons.css";
 @import "~highlight.js/styles/googlecode.css";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.white-box-shadow {
+  box-shadow: -5px 4px 6px rgba(0, 0, 0, 0.25);
+  background-color: var(--hold-white);
+  border-radius: 5px;
+}
+.white-bg.white-box-shadow {
+  padding: 2rem;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.position-static {
+  position: static;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.btn-cancel {
+  color: var(--hold-black) !important;
+  background-color: transparent !important;
+  border-color: var(--hold-black) !important;
+  border-top-left-radius: 5px !important;
+  border-top-right-radius: 5px !important;
+  border-bottom-right-radius: 5px !important;
+  border-bottom-left-radius: 5px !important;
+  min-width: 125px;
+  min-height: 40px;
+
+  font-family: "Poppins-Regular" !important;
+  font-weight: normal !important;
+  font-size: 14px !important;
+  line-height: 21px !important;
+  transition: background-color 0.4s, color 0.4s, box-shadow 0.4s !important;
+}
+.btn-cancel:hover {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+  background-color: var(--hold-black) !important;
+  color: var(--hold-white) !important;
+}
+
+.btn-save {
+  color: var(--hold-white) !important;
+  background-color: var(--hold-blue) !important;
+  border-top-left-radius: 5px !important;
+  border-top-right-radius: 5px !important;
+  border-bottom-right-radius: 5px !important;
+  border-bottom-left-radius: 5px !important;
+  min-width: 125px;
+  min-height: 40px;
+
+  font-family: "Poppins-Regular" !important;
+  font-weight: normal !important;
+  font-size: 14px !important;
+  line-height: 21px !important;
+  transition: background-color 0.4s, box-shadow 0.4s !important;
+}
+
+.btn-save:hover {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+  background-color: #2ea7ba !important;
+}
+
+body {
+  color: #526475 !important;
+  overflow-x: hidden;
+  background-color: #f2f3f8 !important;
+}
+
+/*
+ *  scrolbar
+ */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: #ffffffd1;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: var(--hold-dark-grey);
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+
+.fitHeight {
+  height: 60vh;
+
+  /*   padding-left: 3em; */
+  @media (max-height: 1370px) {
+    height: 86vh;
+    /*   padding-left: 3em; */
+  }
+
+  @media (max-height: 1200px) {
+    height: 85vh;
+    /*   padding-left: 3em; */
+  }
+
+  @media (max-height: 1100px) {
+    height: 84vh;
+    /*     padding-left: 3em; */
+  }
+
+  @media (max-height: 1000px) {
+    height: 83vh;
+    /*   padding-left: 3em; */
+  }
+
+  @media (max-height: 900px) {
+    height: 81vh;
+    /*  padding-left: 3em; */
+  }
+
+  @media (max-height: 800px) {
+    height: 78vh;
+    /*    padding-left: 3em; */
+  }
+
+  @media (max-height: 700px) {
+    height: 75vh;
+    /*    padding-left: 3em; */
+  }
+
+  @media (max-height: 600px) {
+    height: 71vh;
+    /*    padding-left: 3em; */
+  }
+
+  @media (max-height: 500px) {
+    height: 65vh;
+    /*    padding-left: 3em; */
+  }
+}
+
+.cdk-overlay-container .cdk-overlay-connected-position-bounding-box .cdk-overlay-pane .mat-menu-panel {
+  box-shadow: -4px 5px 4px rgba(0, 0, 0, 0.25) !important;
+  min-height: unset !important;
+  background-color: #eff0f5!important;
+}
+
+

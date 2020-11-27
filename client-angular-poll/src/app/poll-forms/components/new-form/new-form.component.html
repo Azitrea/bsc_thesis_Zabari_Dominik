@@ -19,29 +19,15 @@
         </div>
       </div>
       <div class="form-input">
-        <div class="pr-3">
-          <select class="form-control" formControlName="projectSelector">
-            <option [ngValue]="true">Project</option>
-            <option [ngValue]="false">Etap</option>
-          </select>
-        </div>
-        <div *ngIf="newFormForm.value.projectSelector; else selectEtap">
-          <input class="form-control" type="text" formControlName="projectID">
-        </div>
-        <ng-template #selectEtap>
-          <input class="form-control" type="text" formControlName="etapID">
-        </ng-template>
-      </div>
-      <div class="form-input">
         <div>Kitölthető:</div>
         <div>
-          <!-- <hold-date-input formControlName="availableFrom" [maxDate]="newFormForm.value.availableTo"></hold-date-input> -->
+          <input type="date" class="form-control" formControlName="availableFrom" [max]="newFormForm.value.availableTo">
         </div>
       </div>
       <div class="form-input">
         <div>Eddig lehet:</div>
         <div>
-          <!-- <hold-date-input formControlName="availableTo" [minDate]="newFormForm.value.availableFrom"></hold-date-input> -->
+          <input type="date" class="form-control" formControlName="availableTo" [min]="newFormForm.value.availableFrom">
         </div>
       </div>
       <div class="form-input">
@@ -60,17 +46,9 @@
           <mat-checkbox formControlName="optional"></mat-checkbox>
         </div>
       </div>
-      <!-- <div class="form-input"> Not implemented in db
-        <div>Állapot:</div>
-        <div>
-          <input class="form-control" type="text" formControlName="pollStatus">
-        </div>
-      </div> -->
     </form>
   </div>
-  <pre>
-    {{newFormForm.value | json}}
-  </pre>
+
   <div class="d-flex w-100 justify-content-around modal-footer">
     <div>
       <button class="btn btn-cancel" (click)="onCancel()">Mégse</button>

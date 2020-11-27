@@ -3,6 +3,8 @@ import { Observable } from 'rxjs';
 import { FormUpdateService } from '../../services/form-update.service';
 import { Router } from '@angular/router';
 import { PollFormQueryService } from 'src/services/poll/poll-form-query.service';
+import { PollItem } from '../../models/poll-item.model';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'hold-form-list',
@@ -10,7 +12,10 @@ import { PollFormQueryService } from 'src/services/poll/poll-form-query.service'
   styleUrls: ['./form-list.component.scss']
 })
 export class FormListComponent implements OnInit {
-  formList$: Observable<any>;
+  formList: PollItem[];
+
+  dataSource: MatTableDataSource<PollItem> = new MatTableDataSource();
+  displayedColumns: string[];
 
   constructor(
     private pollQueryService: PollFormQueryService,
@@ -18,16 +23,16 @@ export class FormListComponent implements OnInit {
     private router: Router
     ) { }
 
-  ngOnInit() {
-    this.formList$ = this.pollQueryService.getFormList();
+  async ngOnInit() {
+    this.formList = await this.pollQueryService.getFormList().toPromise();
+    this.dataSource.data = this.formList;
+    this.displayedColumns = ['pollName', 'availableFrom', 'availableTo', 'createdAt', 'pollTypeDescription'];
   }
 
-  handelResult(event) {
-    switch (event.action) {
-      case 'FIELD_CLICK': {
-        this.formUpdateService.setSelectedForm(event.value.pollID);
-        this.router.navigate(['poll/builder']);
-      }
+  handelResult(row) {
+    if (row && row.pollID) {
+      this.formUpdateService.setSelectedForm(row.pollID);
+      this.router.navigate(['poll/builder']);
     }
   }
 
