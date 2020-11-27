@@ -32,7 +32,7 @@ export class InstanceListComponent implements OnInit {
   handleResult(row) {
     if (row && row.pollID && row.pollInstanceID) {
       this.formUpdateService.setSelectedAnswer(row.pollID, row.pollInstanceID);
-      this.router.navigate(['poll/answer-view']);
+      this.router.navigate(['poll/answer-list/answer-view']);
     }
   }
 }

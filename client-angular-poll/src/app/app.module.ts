@@ -14,12 +14,13 @@ import { GraphQLModule } from './graphql.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { AuthGuard } from 'src/services/guard/auth.guard';
+import { BaseComponent } from './base/base.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    BaseComponent
   ],
   imports: [
     BrowserModule,

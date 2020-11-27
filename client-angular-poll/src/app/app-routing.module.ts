@@ -1,29 +1,30 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from 'src/services/guard/auth.guard';
+import { BaseComponent } from './base/base.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: '/dashboard',
-    pathMatch: 'full'
-  },
-  {
     path: 'auth/login',
     component: LoginComponent
   },
   {
-    path: 'dashboard',
-    component: DashboardComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'poll',
-    loadChildren: () => import('./poll-forms/poll-forms.module').then(m => m.PollFormsModule),
-    canActivate: [AuthGuard]
+    path: '',
+    component: BaseComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+      },
+      {
+        path: 'poll',
+        loadChildren: () => import('./poll-forms/poll-forms.module').then(m => m.PollFormsModule),
+      },
+    ]
   },
   {
     path: '**',

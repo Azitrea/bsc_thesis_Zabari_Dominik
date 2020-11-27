@@ -16,7 +16,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'builder',
+    path: 'list/builder',
     component: FormWrapperComponent,
     canActivate: [AuthGuard, AuthGuardFormBuilderService],
   },
@@ -31,7 +31,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'answer-view',
+    path: 'answer-list/answer-view',
     component: PollAnswerViewComponent,
     canActivate: [AuthGuard, AuthGuardAnswerService],
   },

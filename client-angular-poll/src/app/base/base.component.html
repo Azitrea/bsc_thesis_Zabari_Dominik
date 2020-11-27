@@ -1,0 +1,14 @@
+<div class="main-content">
+  <div class="menu-col">
+    <div class="menu-header">Menu</div>
+    <div class="menu-content">
+      <div *ngFor="let menu of menuList">
+        <div class="menu-item" routerLinkActive="r-active" [routerLink]="menu.route">{{menu.name}}</div>
+      </div>
+      <div class="logout menu-item" (click)="logout()">Kilépés</div>
+    </div>
+  </div>
+  <div class="router-outlet">
+    <router-outlet></router-outlet>
+  </div>
+</div>

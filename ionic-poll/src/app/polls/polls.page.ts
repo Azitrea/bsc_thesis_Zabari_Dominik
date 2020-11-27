@@ -11,7 +11,7 @@ import { PollQueryService } from 'src/services/poll/poll-query.service';
   styleUrls: ['./polls.page.scss'],
 })
 export class PollsPage {
-  pollList$: Observable<IPollItem[]>;
+  pollList: IPollItem[];
 
   constructor(
     private pollQueryService: PollQueryService,
@@ -19,8 +19,9 @@ export class PollsPage {
     private navCtrl: NavController
     ) {}
 
-  ionViewWillEnter(): void {
-    this.pollList$ = this.pollQueryService.getPollList(null, null, null, null, null);
+  async ionViewWillEnter() {
+    this.pollList = await this.pollQueryService.getPollList(null, null, null, null, null).toPromise();
+    console.log(this.pollList)
   }
 
   selectForm(pollID: number) {

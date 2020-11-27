@@ -32,7 +32,7 @@ export class FormListComponent implements OnInit {
   handelResult(row) {
     if (row && row.pollID) {
       this.formUpdateService.setSelectedForm(row.pollID);
-      this.router.navigate(['poll/builder']);
+      this.router.navigate(['poll/list/builder']);
     }
   }
 

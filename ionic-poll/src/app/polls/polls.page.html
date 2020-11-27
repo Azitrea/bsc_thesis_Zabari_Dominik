@@ -6,8 +6,8 @@
 </ion-header>
 
 <ion-content>
-  <div *ngIf="pollList$ | async as pollListData; else noPoll">
-    <ion-item *ngFor="let item of pollListData" (click)="selectForm(item.pollID)">
+  <div *ngIf="pollList; else noPoll">
+    <ion-item *ngFor="let item of pollList" (click)="selectForm(item.pollID)">
       {{ item.pollName }}
     </ion-item>
   </div>
