@@ -1,6 +1,6 @@
 <div class="option-view">
   <div>
-    <button type="button" class="btn btn-primary" *ngIf="!toEdit" (click)="addNewControl()" [disabled]="optionTrueLength >= 10">Választási lehetőség
+    <button type="button" class="btn btn-save" *ngIf="!toEdit" (click)="addNewControl()" [disabled]="optionTrueLength >= 10">Választási lehetőség
       hozzáadása</button>
     <div *ngIf="optionTrueLength >= 10">Maximum 10db opció</div>
     <hold-new-control-options *ngIf="toEdit" [option]="toEdit" [index]="index" (result)="addEditControl($event)">

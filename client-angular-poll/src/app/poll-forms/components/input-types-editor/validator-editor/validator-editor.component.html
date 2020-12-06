@@ -1,6 +1,6 @@
 <div class="option-view">
   <div>
-    <button *ngIf="!editMode" class="btn btn-primary" (click)="createNew()">Új Validáció</button>
+    <button *ngIf="!editMode" class="btn btn-save" (click)="createNew()">Új Validáció</button>
     <div *ngIf="editMode">
       <hold-new-validation [validationTypeList]="validationTypeList" [validatorToEdit]="validatorToEdit" [index]="index"
         (result)="handleResult($event)"></hold-new-validation>

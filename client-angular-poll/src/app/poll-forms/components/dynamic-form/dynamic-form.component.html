@@ -3,13 +3,9 @@
 
     <div class="question-container position-relative" *ngFor="let field of fields; let i = index;"
       [ngClass]="{'selected': i === selectedIndex}">
-      <span class="material-icons edit-button" (click)="editField(field, i)">settings</span>
+      <span class="material-icons edit-button noselect" (click)="editField(field, i)">settings</span>
       <ng-container holdDynamicField [field]="field" [group]="form" [index]="i"></ng-container>
     </div>
 
   </form>
-
-  <!--   <pre>
-    {{form.value | json}}
-  </pre> -->
 </div>
